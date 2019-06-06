@@ -166,6 +166,7 @@ function register_my_menu() {
 
 function wpb_widgets_init() {
  
+	if(function_exists('register_sidebar')){
     register_sidebar( array(
         'name'          => 'Custom Header Widget Area',
         'id'            => 'custom-header-widget',
@@ -173,7 +174,77 @@ function wpb_widgets_init() {
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="chw-title">',
         'after_title'   => '</h2>',
-    ) );
+	) );
+
+	register_sidebar( array(
+        'name'          => 'Footer-1',
+        'id'            => 'footer-1',
+        'before_widget' => '<div class="chw-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="chw-title">',
+        'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+        'name'          => 'Footer-2',
+        'id'            => 'footer-2',
+        'before_widget' => '<div class="chw-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="chw-title">',
+        'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+        'name'          => 'Footer-3',
+        'id'            => 'footer-3',
+        'before_widget' => '<div class="chw-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="chw-title">',
+        'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+        'name'          => 'Footer-4',
+        'id'            => 'footer-4',
+        'before_widget' => '<div class="chw-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="chw-title">',
+        'after_title'   => '</h2>',
+	) );
+
+
+
+	}
  
 }
 add_action( 'widgets_init', 'wpb_widgets_init' );
+
+function display_recent_post(){ 
+	ob_start();
+	?>
+	<?php $the_query = new WP_Query( 'posts_per_page=2' ); ?>
+	<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+	<div class="post-container">
+		<a href="<?php the_permalink(); ?>">
+			<div class="post-content">
+					<?php the_post_thumbnail(array(100,100)); ?>
+					<?php the_excerpt(__('(more…)')); ?>
+			</div>
+		</a>
+		<div class="post-date">
+			<?php echo get_the_date(); ?>
+		</div>
+	</div>	
+	
+	<?php 
+	endwhile;
+	wp_reset_postdata();
+	return ob_get_clean();
+}
+
+
+
+add_shortcode('display-recent-post', 'display_recent_post');
+
+
+add_filter( 'widget_text', 'do_shortcode');

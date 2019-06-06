@@ -1,6 +1,153 @@
-$footer-background-color: #413f40;
 
-.site-info{
-    background-color: $footer-background-color;
+.site-footer {
+
+     /********************************
+            Footer Main
+    ********************************/
+
+    h2{
+       
+        color: white;
+    }
+
+
+    .chw-title{
+        border-bottom: solid white 1px;
+        text-align: center;
+    }
+
+    .chw-widget li a{
+        text-decoration:none;
+        color: white;
+    }
+    .chw-widget .wp-image-21{
+        margin-bottom: 15px;
+    }
+
+    .post-content{
+        color: white;
+    }
+    #recent-posts{
+        width: 25%;
+    }
+
+    .post-container{
+
+        a{
+            color:white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .post-content{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+
+            p{
+                font-size: 12px;
+                width: 50%;
+                margin: 0px;
+            }
+
+            img{
+                margin-right: 10px;
+            }
+
+        }
+
+        .post-date{
+            display:flex;
+            justify-content: center;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+    }
+
+
+     #footer-main{
+        width: 100%;
+        padding: 30px 0px;
+
+        .site-info{
+            display: flex;
+            margin: auto;
+            justify-content: space-around;
+
+            
+
+            #menu-footer-menu{
+                display: flex;
+                flex-direction: column;
+                margin: 0px;
+                height: 18rem;
+                justify-content: space-between;
+            }
+
+            .nav-address {
+                display:flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-top: 10px;
+                a{
+            
+                    text-decoration: none;
+                    margin-bottom: 40px;
+                    color: white;
+                    font-size: large;
+                }
+            }
+        }
+
+
+
+     }
+     
+
+    /********************************
+            Footer Social
+    ********************************/
+    .ft-social-list{
+        display: flex;
+        margin: auto;
+        flex-direction: row;
+        list-style: none;
+        width: 20%;
+        height: 60px;
+        padding:20px 0px 10px 0px;
+        justify-content: space-around;
+        
+    }
+
+
+    /********************************
+            Footer Legal
+    ********************************/
+
+    #footer-legal{
+        background-color:#980f05;
+        color: white;
+        
+    }
+
+    .ft-legal-list {
+        display: flex;
+        margin-bottom: 0px;
+        flex-direction: row;
+        list-style: none;
+        width: 100%;
+        height: 40px;
+        padding-top:10px;
+        justify-content: space-around;
+
+        li a{
+            color: white;
+            text-decoration: none;
+        }
+        
+    }
+
 
 }
+

@@ -11,7 +11,9 @@
  *
  * @package hammondroto
  */
-
+?>
+<div class="site-wrapper">
+<?php
 get_header();
 ?>
 
@@ -57,3 +59,4 @@ get_header();
 <?php
  	get_sidebar();
 	get_footer();
+?></div>

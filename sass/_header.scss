@@ -2,6 +2,7 @@ $nav-background-color: #c2c0c1;
 $accent-color:#fe1301;
 $address-color: #980f05;
 
+.site-header{
 //Container for logo and address
 .logo-address-container{
     display:flex;
@@ -114,4 +115,6 @@ $address-color: #980f05;
     position: relative;
     left: 20px;
     content: "\f002";
+}
+
 }
