@@ -21,6 +21,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" type="text/css" media="all">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 	<?php wp_head(); ?>
 </head>
@@ -67,16 +68,20 @@
 		<?php endif; ?>
 		</div>
 		<!--The tags that control the navigation and all the contents inside-->
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hammondroto' ); ?></button>
-			<?php wp_nav_menu( array(
-				 'theme_location' => 'header-menu',
-				 'menu_class'     => 'primary-nav',
-				 ) ); ?>
+		<nav id="menu" role="navigation" class="main-navigation">
+			
+			<div class="wrapper">
+			<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 
+										'container_id' => 'cssmenu',
+										'walker' => new CSS_Menu_Maker_Walker() ) ); ?>
 
+			</div>
+			
 
-		<p class="wrapper"><input id="search" name="search" type="text" placeholder=''></p>
+		<!-- <p class="wrapper"><input id="search" name="search" type="text" placeholder=''></p> -->
 		</nav><!-- #site-navigation -->
+
+		
 
 
 	</header><!-- #masthead -->

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
 Theme Name: hammondroto
 Theme URI: http://underscores.me/
@@ -986,12 +985,13 @@ footer {
 }
 .site-header .main-navigation {
   display: flex;
-  height: 70px;
+  height: auto;
   background-color: #c2c0c1;
 }
+.site-header .main-navigation a {
+  color: black;
+}
 .site-header #site-navigation {
-  border-top: solid #fe1301 2px;
-  border-bottom: solid #fe1301 2px;
   height: 80px;
 }
 .site-header .site-description {
@@ -1019,12 +1019,6 @@ footer {
   text-decoration: none;
   font-size: 1.4rem;
   font-weight: 300;
-  transition-delay: 600ms;
-  transition: 600ms;
-}
-.site-header .primary-nav li a:hover {
-  color: #fe1301;
-  border-bottom: solid black 2px;
 }
 .site-header .nav-address {
   font-size: 22px;
@@ -1046,18 +1040,75 @@ footer {
   width: auto;
   margin: auto 70px 10px auto;
   height: 40px;
+  padding-left: 30px;
 }
 .site-header input {
   font-family: "Font Awesome 5 Free";
   padding-right: 2px;
 }
-.site-header .wrapper:before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: #980f05;
-  position: relative;
-  left: 20px;
-  content: "";
+@media only screen and (max-width: 500px) {
+  .site-header .logo-address-container {
+    flex-direction: column;
+  }
+  .site-header .logo-address-container .custom-logo-link img {
+    width: auto;
+    margin: 0px;
+  }
+  .site-header .logo-address-container .site-description {
+    font-size: 15px;
+    margin-left: 19%;
+  }
+  .site-header .logo-address-container .nav-address {
+    display: none;
+  }
+  .site-header .site-header input {
+    display: none !important;
+  }
+  .site-header .wrapper:before {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  #cssmenu #menu-button {
+    padding: 33px !important;
+    font-size: 21px !important;
+  }
+
+  .site-header .nav-address {
+    display: none !important;
+  }
+}
+#cssmenu > ul > li > a {
+  display: flex;
+  padding: 15px;
+  font-size: 19px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 100 !important;
+  color: black;
+  transition-delay: 600ms;
+  transition: 600ms;
+  justify-content: space-around;
+}
+#cssmenu > ul > li > a span {
+  padding-bottom: 5px;
+}
+#cssmenu > ul > li > a:hover {
+  color: #fe1301;
+  border-bottom: solid black 2px;
+}
+
+#cssmenu > ul {
+  display: flex;
+  width: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wrapper {
+  padding-left: 40px;
+  width: 100%;
 }
 
 .site-footer {
