@@ -15,6 +15,10 @@
 
 	<footer id="colophon" class="site-footer">
 
+	<div class="footer-wrapper">
+
+
+
 	<!-- Footer main -->
 	<section id="footer-main">
 	<div class="site-info">
@@ -64,6 +68,8 @@
           <li><a href="https://www.spectrumnetdesigns.com/">&copy; Hammond Roto-Finish 2019 - All Rights Reserved. Site Designed by Spectrum Net Designs</a></li>
         </ul>
 	</section>
+
+	</div><!--footer wrapper -->
 
 		
 	</footer><!-- #colophon -->

@@ -2,201 +2,297 @@ $nav-background-color: #c2c0c1;
 $accent-color:#fe1301;
 $address-color: #980f05;
 
-.site-header{
-//Container for logo and address
-.logo-address-container{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-//Container for logo
-.site-branding{
-    float: left;
-}
 
-//Wrapper for navigation
-.main-navigation{
+.site-header {
 
-    display: flex;
-    height: auto;
-    background-color: $nav-background-color;
-
-    a{
-        color:black;
+    //Container for logo and address
+    .logo-address-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1140px;
+        margin:auto;
     }
-} 
 
-#site-navigation{
-    height: 80px;
-    
-}
-//Site Description located under logo
-.site-description{
-    font-size:19px;
-    margin-top: 0px;
-    margin-left: 83%;
-}
+    .mobile-search-box{
+        display:none;
+    }
 
-//Logo image
-.custom-logo-link img{
-    width: 600px;
-    margin-left: 56%;
-    margin-top: 15px;
-}
- 
-.menu-header-menu-container{
-    width: 100%;
-    padding-left: 6%;
-    margin: auto;
-}
-
- 
- // each navigation item
-.primary-nav li {
-    padding: 5px;
-    margin:0px 2%;
-    justify-content: space-between;
-} 
-
-
-// each navigation item anchor17px
-.primary-nav li a {
-    color:black;
-    text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: 300;
-    
-   
-} 
-
-//Address located next to the logo
-.nav-address{
-    font-size: 22px;
-    font-weight: 100;
-    width: 350px;
-    border-left: solid $address-color 4px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    padding-left: 10px;
-
-    a {
-        color:black;
-        text-decoration: none;
-      }
-      
-    a:visited {
-        text-decoration: none;
-      }
-      
-}
-
-
-//Search box
-#search{
-    width: auto;
-    margin: auto 70px 10px auto;
-    height: 40px;
-    padding-left: 30px
-}
- 
-
- input { 
-    font-family: 'Font Awesome\ 5 Free';
-    padding-right: 2px;
-}
-
-// .wrapper:before {
-//     font-family: 'Font Awesome\ 5 Free';
-//     font-weight: 900;
-//     color: $address-color;
-//     position: relative;
-//     left: 20px;
-//     content: "\f002";
-// }
-
-
-
-
-@media only screen  and (max-width: 500px) {
-    
-    .logo-address-container{
+    //Container for logo
+    .site-branding {
+        width: 100%;
+        display: flex;
         flex-direction: column;
+        padding-left: 10%;
+        padding-top: 15px;
+    }
 
-        .custom-logo-link img{
-            width: auto;
-            margin: 0px;
+    //Wrapper for navigation
+    .main-navigation {
+        display: flex;
+        height: auto;
+        background-color: $nav-background-color;
+        max-width: 1140px;
+        margin:auto;
+
+        a {
+            color: black;
+        }
+    }
+
+    .nav-wrapper{
+        width: 100%;
+        background-color: $nav-background-color;
+    }
+
+    #site-navigation {
+        height: 80px;
+
+    }
+
+    //Site Description located under logo
+    .site-description {
+        font-size: 19px;
+        padding-left: 13%;
+
+    }
+
+    //Logo image
+    .custom-logo-link img {
+        height: auto;
+        width: 100%;
+        max-width: 50%;
+
+    }
+
+
+    .menu-header-menu-container {
+        width: 100%;
+        padding-left: 6%;
+        margin: auto;
+    }
+
+
+    // each navigation item
+    .primary-nav li {
+        padding: 5px;
+        margin: 0px 2%;
+        justify-content: space-between;
+    }
+
+
+    // each navigation item anchor17px
+    .primary-nav li a {
+        color: black;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: 300;
+
+
+    }
+
+    //Address located next to the logo
+    .nav-address {
+        font-size: 22px;
+        font-weight: 100;
+        width: 260px;
+        border-left: solid $address-color 4px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        padding-left: 10px;
+
+        a {
+            color: black;
+            text-decoration: none;
         }
 
-        .site-description{
-            font-size: 15px;
-            margin-left: 19%;
+        a:visited {
+            text-decoration: none;
         }
 
-        .nav-address{
+    }
+
+
+
+
+    input {
+        font-family: 'Font Awesome\ 5 Free';
+        width: 250px;
+        padding-left: 28px;
+        margin-top: 9px;
+    }
+
+    .search-box{
+        position: relative;
+    }
+
+     .search-box:before {
+         font-family: 'Font Awesome\ 5 Free';
+         font-weight: 900;
+         color: $address-color;
+         position: absolute;
+         top: 13px;
+         left: 11px;
+         content: "\f002";
+    }
+
+
+
+
+    @media only screen and (max-width: 500px) {
+
+        .logo-address-container {
+            flex-direction: column;
+
+            .custom-logo-link img {
+                width: auto;
+                margin: 0px;
+            }
+
+            .site-description {
+                font-size: 15px;
+                margin-left: 19%;
+            }
+
+            .nav-address {
+                display: none;
+            }
+
+
+        }
+
+        .site-header input {
+            display: none !important;
+        }
+
+        .wrapper:before {
+
             display: none;
         }
 
        
-    }
-
-    .site-header input {
-        display: none !important;
-    }
-
-    .wrapper:before{
-
-        display:none;
-    }
-}
-
-}
-
-
-@media (max-width: 950px) {
-    
-    #cssmenu #menu-button   {
-      padding: 33px !important;
-      font-size:21px !important;
        
     }
 
-   .site-header .nav-address{
-       display:none !important;
-   } 
+}
+
+@media only screen and (max-width: 500px){
+    
+    #footer-main .site-info{
+        display: flex;
+        margin: auto;
+        flex-direction: column !important;
+        padding-left: 75px;
+        padding-right: 75px;
+        
+    
+    }
+
+    .site-info #menu-footer-menu{
+        display: flex;
+        flex-direction: column;
+        margin: auto !important;
+        height: 10rem !important;
+        justify-content: baseline !important;
+
+    }
+
+    #recent-posts{
+        width: 100% !important;
+    }
+
+    .site-footer .ft-legal-list{
+        display: flex;
+        margin-bottom: auto;
+        flex-direction: column !important;
+        list-style: none;
+        width: 58% !important;
+        height: 90px !important;
+        font-size: x-small;
+        padding-top: 10px;
+        justify-content: center !important;
+        
+    }
+
 
 }
 
-#cssmenu > ul > li > a{
-    display:flex;
-    padding: 15px;
-    font-size: 19px;
+@media only screen and (max-width: 967px) {
+
+    #cssmenu #menu-button {
+        padding: 33px !important;
+        font-size: 21px !important;
+
+    }
+
+    .site-header .nav-address {
+        display: none !important;
+    }
+
+    .site-header .custom-logo-link img{
+        height: auto;
+        width: 100%;
+        max-width: 68%;
+    }
+
+    
+
+
+    .wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+
+    input{
+        width:75% !important;
+        margin-left: 5em;
+        
+    }
+
+    .search-box:before{
+        left: 85px !important;
+    }
+}
+
+#cssmenu>ul>li>a {
+    display: flex;
+    padding: 20px 10px 10px 10px !important;
+    font-size: initial !important;
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 100 !important;
     color: black;
     transition-delay: 600ms;
     transition: 600ms;
-    justify-content : space-around;
-     
-    span{ 
+    justify-content: space-around;
+
+    span {
         padding-bottom: 5px;
     }
-     
-    &:hover{
+
+    &:hover {
         color: $accent-color;
         border-bottom: solid black 2px;
     }
 }
 
-#cssmenu > ul{
+#cssmenu > ul {
     display: flex;
     width: auto;
+    padding-left: 5em !important;
     justify-content: space-around;
     align-items: center;
 }
 
 .wrapper{
-    padding-left: 40px;
-    width:100%;
+    width: 100%;
+    display: inline-flex;
+}
+
+
+
+h1 .site-tile {
+    display: none;
 }

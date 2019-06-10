@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: hammondroto
 Theme URI: http://underscores.me/
@@ -622,7 +623,6 @@ a:hover, a:active {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
   width: 100%;
 }
 .main-navigation ul {
@@ -633,7 +633,6 @@ a:hover, a:active {
 }
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
   position: absolute;
   top: 100%;
   left: -999em;
@@ -979,30 +978,44 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1140px;
+  margin: auto;
+}
+.site-header .mobile-search-box {
+  display: none;
 }
 .site-header .site-branding {
-  float: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+  padding-top: 15px;
 }
 .site-header .main-navigation {
   display: flex;
   height: auto;
   background-color: #c2c0c1;
+  max-width: 1140px;
+  margin: auto;
 }
 .site-header .main-navigation a {
   color: black;
+}
+.site-header .nav-wrapper {
+  width: 100%;
+  background-color: #c2c0c1;
 }
 .site-header #site-navigation {
   height: 80px;
 }
 .site-header .site-description {
   font-size: 19px;
-  margin-top: 0px;
-  margin-left: 83%;
+  padding-left: 13%;
 }
 .site-header .custom-logo-link img {
-  width: 600px;
-  margin-left: 56%;
-  margin-top: 15px;
+  height: auto;
+  width: 100%;
+  max-width: 50%;
 }
 .site-header .menu-header-menu-container {
   width: 100%;
@@ -1023,7 +1036,7 @@ footer {
 .site-header .nav-address {
   font-size: 22px;
   font-weight: 100;
-  width: 350px;
+  width: 260px;
   border-left: solid #980f05 4px;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -1036,15 +1049,23 @@ footer {
 .site-header .nav-address a:visited {
   text-decoration: none;
 }
-.site-header #search {
-  width: auto;
-  margin: auto 70px 10px auto;
-  height: 40px;
-  padding-left: 30px;
-}
 .site-header input {
   font-family: "Font Awesome 5 Free";
-  padding-right: 2px;
+  width: 250px;
+  padding-left: 28px;
+  margin-top: 9px;
+}
+.site-header .search-box {
+  position: relative;
+}
+.site-header .search-box:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #980f05;
+  position: absolute;
+  top: 13px;
+  left: 11px;
+  content: "";
 }
 @media only screen and (max-width: 500px) {
   .site-header .logo-address-container {
@@ -1069,7 +1090,40 @@ footer {
   }
 }
 
-@media (max-width: 950px) {
+@media only screen and (max-width: 500px) {
+  #footer-main .site-info {
+    display: flex;
+    margin: auto;
+    flex-direction: column !important;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
+  .site-info #menu-footer-menu {
+    display: flex;
+    flex-direction: column;
+    margin: auto !important;
+    height: 10rem !important;
+    justify-content: baseline !important;
+  }
+
+  #recent-posts {
+    width: 100% !important;
+  }
+
+  .site-footer .ft-legal-list {
+    display: flex;
+    margin-bottom: auto;
+    flex-direction: column !important;
+    list-style: none;
+    width: 58% !important;
+    height: 90px !important;
+    font-size: x-small;
+    padding-top: 10px;
+    justify-content: center !important;
+  }
+}
+@media only screen and (max-width: 967px) {
   #cssmenu #menu-button {
     padding: 33px !important;
     font-size: 21px !important;
@@ -1078,11 +1132,31 @@ footer {
   .site-header .nav-address {
     display: none !important;
   }
+
+  .site-header .custom-logo-link img {
+    height: auto;
+    width: 100%;
+    max-width: 68%;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  input {
+    width: 75% !important;
+    margin-left: 5em;
+  }
+
+  .search-box:before {
+    left: 85px !important;
+  }
 }
 #cssmenu > ul > li > a {
   display: flex;
-  padding: 15px;
-  font-size: 19px;
+  padding: 20px 10px 10px 10px !important;
+  font-size: initial !important;
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: 100 !important;
@@ -1102,13 +1176,23 @@ footer {
 #cssmenu > ul {
   display: flex;
   width: auto;
+  padding-left: 5em !important;
   justify-content: space-around;
   align-items: center;
 }
 
 .wrapper {
-  padding-left: 40px;
   width: 100%;
+  display: inline-flex;
+}
+
+h1 .site-tile {
+  display: none;
+}
+
+.footer-wrapper {
+  max-width: 1140px;
+  margin: auto;
 }
 
 .site-footer {

@@ -36,49 +36,62 @@
 
 	<header id="masthead" class="site-header">
 
-		<div class="logo-address-container">
-		<!--The Div that controls the logo and contents connected to the logo.-->
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( 'hammond-home' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( 'hammond-home' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$hammondroto_description = get_bloginfo( 'description', 'display' );
-			if ( $hammondroto_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $hammondroto_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
 
-			
-		</div><!-- .site-branding -->
-		<?php
-			//Adding widget to display address and phone number
-			if ( is_active_sidebar( 'custom-header-widget' ) ) : ?>
-				<div id="header-widget-area" class="chw-widget-area widget-area" role="complementary">
-				<?php dynamic_sidebar( 'custom-header-widget' ); ?>
+				<div class="logo-address-container">
+
+					<!--The Div that controls the logo and contents connected to the logo.-->
+						<div class="site-branding">
+							<?php
+							the_custom_logo();
+							if ( !is_front_page() && !is_home() ) :
+								
+								?>
+								<p class="site-title"><a href="<?php echo esc_url( home_url( 'hammond-home' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+								<?php
+							endif;
+							$hammondroto_description = get_bloginfo( 'description', 'display' );
+							if ( $hammondroto_description || is_customize_preview() ) :
+								?>
+								<p class="site-description"><?php echo $hammondroto_description; /* WPCS: xss ok. */ ?></p>
+							<?php endif; ?>
+
+							
+						</div><!-- .site-branding -->
+						<?php
+							//Adding widget to display address and phone number
+							if ( is_active_sidebar( 'custom-header-widget' ) ) : ?>
+								<div id="header-widget-area" class="chw-widget-area widget-area" role="complementary">
+								<?php dynamic_sidebar( 'custom-header-widget' ); ?>
+								</div>
+								
+						<?php endif; ?>
 				</div>
-				
-		<?php endif; ?>
-		</div>
-		<!--The tags that control the navigation and all the contents inside-->
-		<nav id="menu" role="navigation" class="main-navigation">
-			
-			<div class="wrapper">
-			<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 
-										'container_id' => 'cssmenu',
-										'walker' => new CSS_Menu_Maker_Walker() ) ); ?>
+
+			<div class="nav-wrapper" >
+
+								<div class="mobile-search-box">
+									<input  name="search" type="text" placeholder=''>
+								</div>
+
+				<!--The tags that control the navigation and all the contents inside-->
+				<nav id="menu" role="navigation" class="main-navigation">
+					
+					<div class="wrapper">
+
+							<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 
+														'container_id' => 'cssmenu',
+														'walker' => new CSS_Menu_Maker_Walker() ) ); ?>
+
+							<div class="search-box">
+								<input  name="search" type="text" placeholder=''>
+							</div>
+
+
+
+					</div>
 
 			</div>
 			
-
-		<!-- <p class="wrapper"><input id="search" name="search" type="text" placeholder=''></p> -->
 		</nav><!-- #site-navigation -->
 
 		
